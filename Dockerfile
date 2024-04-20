@@ -55,7 +55,9 @@ RUN pip3.10 install virtualenv
 RUN pip3.10 install nvidia-pyindex
 RUN pip3.10 install nvidia-cudnn
 
-# Install vi (Vim)
-RUN apt-get install -y vim
+# Install vi 
+RUN apt-get update && \
+    apt-get install -y busybox && \
+    ln -s /bin/busybox /bin/vi
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
