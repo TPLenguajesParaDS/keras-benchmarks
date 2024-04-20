@@ -52,6 +52,8 @@ RUN ln -s /usr/local/bin/python3.10 /usr/local/bin/python3
 # Install virtualenv
 RUN pip3.10 install virtualenv
 
+RUN pip3.10 install nvidia-cudnn
+
 RUN export CUDNN_PATH=$(dirname $(python3.10 -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))       
 RUN export LD_LIBRARY_PATH=${CUDNN_PATH}/lib 
 
