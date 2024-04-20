@@ -27,6 +27,9 @@ models=(
 for venv_name in "${venvs[@]}"; do
     printf "# Benchmarking $venv_name\n\n" | tee -a $output_file
     source $venv_path/$venv_name/bin/activate
+    export CUDNN_PATH=$(dirname $(python3.10 -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))
+    export LD_LIBRARY_PATH=${CUDNN_PATH}/lib
+    
     if [[ $venv_name == torch ]]; then
         file_name=torch
     else
