@@ -4,8 +4,7 @@ FROM nvidia/cuda:12.0.0-devel-ubuntu20.04
 ENV PATH="/usr/local/cuda/bin:${PATH}"
 ENV LD_LIBRARY_PATH="/usr/local/cuda/lib64:${LD_LIBRARY_PATH}"
 
-RUN export CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))       
-RUN export LD_LIBRARY_PATH=${CUDNN_PATH}/lib 
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y \
@@ -52,5 +51,8 @@ RUN ln -s /usr/local/bin/python3.10 /usr/local/bin/python3
 
 # Install virtualenv
 RUN pip3 install virtualenv
+
+RUN export CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))       
+RUN export LD_LIBRARY_PATH=${CUDNN_PATH}/lib 
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
