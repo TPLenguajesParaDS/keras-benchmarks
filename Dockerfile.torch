@@ -1,0 +1,7 @@
+FROM cuda-python310:latest
+
+COPY . .
+
+RUN bash shell/install.sh keras-torch
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
