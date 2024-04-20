@@ -1,7 +1,7 @@
 FROM cuda-python310:latest
 
-RUN ln -sf /usr/local/bin/python3.10 /usr/local/bin/python3 \
-    && ln -sf /usr/local/bin/pip3.10 /usr/local/bin/pip3
+RUN ln -sf /usr/local/bin/python3.10 /usr/local/bin/python \
+    && ln -sf /usr/local/bin/pip3.10 /usr/local/bin/pip
 
 COPY . .
 
