@@ -50,7 +50,7 @@ RUN wget https://bootstrap.pypa.io/get-pip.py | python3.10
 RUN ln -s /usr/local/bin/python3.10 /usr/local/bin/python3
 
 # Install virtualenv
-RUN pip3 install virtualenv
+RUN pip install virtualenv
 
 RUN export CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))       
 RUN export LD_LIBRARY_PATH=${CUDNN_PATH}/lib 
