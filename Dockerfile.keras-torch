@@ -5,6 +5,8 @@ RUN ln -sf /usr/local/bin/python3.10 /usr/local/bin/python \
 
 COPY . .
 
+RUN apt-get update && apt-get install -y git
+
 RUN bash shell/install.sh keras-torch
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
