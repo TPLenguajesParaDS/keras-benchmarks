@@ -111,7 +111,7 @@ def groupLabels(events, values):
     metrics_per_label = []
 
     for i in range(len(events) - 1):
-        active_range = (int(events[i][1] / 1000), int(events[i + 1][1] / 1000))
+        active_range = (int(events[i][1]), int(events[i + 1][1]))
         active_label = events[i + 1][0]
 
         range_metrics = {}
@@ -190,8 +190,8 @@ def main(framework, container):
     print(f'Pulling metrics for container: {container}')
     print(f'Events: {events}')
 
-    start_time = events[0][1] / 1000
-    end_time = events[len(events) - 1][1] / 1000
+    start_time = events[0][1]
+    end_time = events[len(events) - 1][1]
 
     print(f'Start pulling metrics: START: {start_time} - END {end_time}')
     # print(f'Metrics to query: {gauge_metric_names}')
