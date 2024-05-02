@@ -88,7 +88,7 @@ docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cach
 
 For keras-tensorflow
 ```bash
-docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cache/kagglehub/models/keras \ 
+docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cache/kagglehub/models/keras \
   --name keras-tensorflow \
   -v /users/jpmarshall/repos/keras-benchmarks/benchmark/:/benchmark \
   -v /users/jpmarshall/repos/keras-benchmarks/configs/:/configs \
@@ -98,7 +98,7 @@ docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cach
 
 For tensorflow
 ```bash
-docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cache/kagglehub/models/keras \ 
+docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cache/kagglehub/models/keras \
   --name tensorflow \
   -v /users/jpmarshall/repos/keras-benchmarks/benchmark/:/benchmark \
   -v /users/jpmarshall/repos/keras-benchmarks/configs/:/configs \
@@ -108,7 +108,7 @@ docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cach
 
 For torch
 ```bash
-docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cache/kagglehub/models/keras \ 
+docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cache/kagglehub/models/keras \
   --name torch \
   -v /users/jpmarshall/repos/keras-benchmarks/benchmark/:/benchmark \
   -v /users/jpmarshall/repos/keras-benchmarks/configs/:/configs \

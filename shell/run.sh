@@ -19,7 +19,9 @@ if [ -e "$events_file" ]; then
     rm -f "$events_file"
 fi
 
-export LD_LIBRARY_PATH=
+get_timestamp() {
+  date +"%s" # current time
+}
 
 models=(
     "bert"
