@@ -61,8 +61,8 @@ That will create dedicated docker images with their python environments to run.
 Then start docker compose with the metrics stats for monitoring.
 
 ```bash
-docker-compose -f metrics/stack/docker-compose.yml up
-```
+docker-compose -f metrics/stack/docker-compose.yml up -d
+``` 
 
 Then you can run each docker image individually, as they need exclusivity on the GPU resources.
 
