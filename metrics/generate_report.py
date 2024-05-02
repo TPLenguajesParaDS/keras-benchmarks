@@ -70,6 +70,8 @@ def query_metric_values(metric_names, start_time, end_time, container):
         print(f'Query: {query_str}')
         status = response.json()['status']
 
+        print(f'request: {response.request.url}')
+
         if status == "error":
             print(response.json())
             sys.exit(2)
