@@ -53,6 +53,7 @@ fi
 printf "# Benchmarking $env_name\n\n" | tee -a $output_file
 printf "compiled\n\n"
 
+
 printf "label,time\n" >> $events_file
 printf "INIT,$(get_timestamp)\n" >> $events_file
 
@@ -76,6 +77,7 @@ if [[ $env_name == torch ]]; then
     printf "not compiled\n\n"
 fi
 
+
 for model_name in "${models[@]}"; do
     printf "$model_name:\n" | tee -a $output_file
     printf "fit:\n" | tee -a $output_file
@@ -85,7 +87,6 @@ for model_name in "${models[@]}"; do
     printf "predict:\n" | tee -a $output_file
     python benchmark/$model_name/$file_name/predict.py $output_file
     printf "${model_name}_PREDICT,$(get_timestamp)\n" >> $events_file
-
     printf "\n\n" | tee -a $output_file
 done
 
