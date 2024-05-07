@@ -73,7 +73,7 @@ docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cach
   -v /users/jpmarshall/repos/keras-benchmarks/benchmark/:/benchmark \
   -v /users/jpmarshall/repos/keras-benchmarks/configs/:/configs \
   -v /users/jpmarshall/repos/keras-benchmarks/shell/:/shell \
-  -d --gpus all keras-torch
+  -d --gpus device=GPU-0d58720e-34f6-3fd5-510d-e6d5249693f4 keras-torch
 ```
 
 For keras-jax
@@ -83,7 +83,7 @@ docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cach
    -v /users/jpmarshall/repos/keras-benchmarks/benchmark/:/benchmark \
    -v /users/jpmarshall/repos/keras-benchmarks/configs/:/configs \
    -v /users/jpmarshall/repos/keras-benchmarks/shell/:/shell \
-   -d --gpus all keras-jax 
+   -d --gpus device=GPU-0d58720e-34f6-3fd5-510d-e6d5249693f4 keras-jax 
 ```
 
 For keras-tensorflow
@@ -93,7 +93,7 @@ docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cach
   -v /users/jpmarshall/repos/keras-benchmarks/benchmark/:/benchmark \
   -v /users/jpmarshall/repos/keras-benchmarks/configs/:/configs \
   -v /users/jpmarshall/repos/keras-benchmarks/shell/:/shell \
-  -d --gpus all keras-tensorflow 
+  -d --gpus device=GPU-0d58720e-34f6-3fd5-510d-e6d5249693f4 keras-tensorflow 
 ```
 
 For tensorflow
@@ -103,7 +103,7 @@ docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cach
   -v /users/jpmarshall/repos/keras-benchmarks/benchmark/:/benchmark \
   -v /users/jpmarshall/repos/keras-benchmarks/configs/:/configs \
   -v /users/jpmarshall/repos/keras-benchmarks/shell/:/shell \
-  -d --gpus all tensorflow 
+  -d --gpus device=GPU-0d58720e-34f6-3fd5-510d-e6d5249693f4 tensorflow 
 ```
 
 For torch
@@ -113,7 +113,7 @@ docker run -v /users/jpmarshall/repos/keras-benchmarks/cached_models:/root/.cach
   -v /users/jpmarshall/repos/keras-benchmarks/benchmark/:/benchmark \
   -v /users/jpmarshall/repos/keras-benchmarks/configs/:/configs \
   -v /users/jpmarshall/repos/keras-benchmarks/shell/:/shell \
-  -d --gpus all torch 
+  -d --gpus device=GPU-0d58720e-34f6-3fd5-510d-e6d5249693f4 torch 
 ```
 
 Any of those commands will deploy the image in a container with access to the GPU, in an idle state.
